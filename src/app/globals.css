@@ -29,8 +29,9 @@ body {
   background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
   color: white;
   padding: 20px;
-  text-align: center;
-  position: relative;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .chat-title {
@@ -39,10 +40,6 @@ body {
 }
 
 .connection-status {
-  position: absolute;
-  right: 20px;
-  top: 50%;
-  transform: translateY(-50%);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -195,4 +192,91 @@ body {
 
 .login-button:hover {
   transform: translateY(-2px);
+}
+
+.room-selection {
+  width: 100%;
+  max-width: 450px;
+}
+
+.room-selection h3 {
+  margin-bottom: 15px;
+  color: #333;
+  font-size: 1.1em;
+}
+
+.room-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 20px;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.room-card {
+  background: white;
+  border: 2px solid #e9ecef;
+  border-radius: 12px;
+  padding: 15px 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-align: center;
+  min-height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.room-card:hover {
+  border-color: #667eea;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(102, 126, 234, 0.15);
+}
+
+.room-card.selected {
+  border-color: #667eea;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+}
+
+.room-name {
+  font-size: 1.1em;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.room-desc {
+  font-size: 0.85em;
+  opacity: 0.8;
+  line-height: 1.2;
+}
+
+.current-room {
+  background: rgba(255,255,255,0.2);
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 0.9em;
+  font-weight: 500;
+  white-space: nowrap;
+  min-width: fit-content;
+  margin-bottom: 4px;
+}
+
+.header-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.current-user {
+  background: rgba(255,255,255,0.15);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8em;
+  font-weight: 400;
+  white-space: nowrap;
+  opacity: 0.9;
 }
